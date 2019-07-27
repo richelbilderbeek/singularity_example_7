@@ -9,7 +9,7 @@ From: pavel-demin/singularity-ubuntu:1804
 %post
 
     apt-get update
-    apt-get install git
+    apt-get install git libboost-all-dev
     git clone https://github.com/richelbilderbeek/ndsmake
     git clone https://github.com/richelbilderbeek/RibiClasses
     cd ndsmake
