@@ -4,7 +4,7 @@ From: pavel-demin/singularity-ubuntu:1804
 
 %runscript
 
-    ./ndsmake
+    /ndsmake/ndsmake
 
 %post
 
@@ -15,6 +15,10 @@ From: pavel-demin/singularity-ubuntu:1804
     cd ndsmake
     qmake ndsmake.pro
     make
+
+%test
+
+    /ndsmake/ndsmake --version
 
 %labels
 
