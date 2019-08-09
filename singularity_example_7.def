@@ -3,7 +3,7 @@ From: ubuntu:18.10
 
 %runscript
 
-    /ndsmake/ndsmake
+    /ndsmake/ndsmake "$@"
 
 %post
 
@@ -13,7 +13,11 @@ From: ubuntu:18.10
     git clone https://github.com/richelbilderbeek/RibiClasses
     cd ndsmake
     qmake ndsmake.pro
-    make
+    make --silent
+    # Download a test .pro file
+    wget https://raw.githubusercontent.com/richelbilderbeek/libnds_example_1/master/libnds_example_1.pro
+    /ndsmake/ndsmake
+    /ndsmake/ndsmake libnds_example_1.pro
 
 %test
 
