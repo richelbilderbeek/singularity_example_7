@@ -23,8 +23,11 @@ install:
 script:
   # Build the container
   - sudo ./build_container
+  # Download a test .pro file
+  - wget https://raw.githubusercontent.com/richelbilderbeek/libnds_example_1/master/libnds_example_1.pro
   # Run the container
   - ./singularity_example_7.sif
+  - ./singularity_example_7.sif libnds_example_1.pro
   # Check dead links
   - rm -f *.sif
   - rm -f *.tar.gz
